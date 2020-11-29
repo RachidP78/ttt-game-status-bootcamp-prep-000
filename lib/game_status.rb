@@ -28,12 +28,15 @@ def full?(board)
 end
 
 def draw(board)
-  if full?(board) == true
+  if !won?(board) && full?(board)
     true
-  elsif won?(board) == true
+  elsif !won?(board) && !full?(board)
     false
-  else false
+  else won?(board)
+    false
   end
+
+
 end
 # Define your WIN_COMBINATIONS constant
 WIN_COMBINATIONS = [
